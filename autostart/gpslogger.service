@@ -1,0 +1,11 @@
+[Unit]
+Description=GPS Logger
+
+[Service]
+Type=idle
+ExecStart=python3 main.py
+WorkingDirectory=/home/pi/GPSLogger/
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -35,8 +35,6 @@ def main():
             else:
                 pass
 
-            time.sleep(1)
-
     except KeyboardInterrupt:
         connection.close()
         logger.info("\nTerminated by user\nGood Bye.\n")

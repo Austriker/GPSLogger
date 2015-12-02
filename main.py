@@ -5,16 +5,15 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-handler = logging.FileHandler('hello.log')
-handler.setLevel(logging.INFO)
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger.setLevel(logging.DEBUG)
+
+# create console handler and set level to info
+handler = logging.StreamHandler()
+handler.setLevel(logging.DEBUG)
+formatter = logging.Formatter("%(levelname)s - %(message)s")
 handler.setFormatter(formatter)
-
-consoleHandler = logging.StreamHandler()
-consoleHandler.setFormatter(formatter)
-
-logger.addHandler(consoleHandler)
 logger.addHandler(handler)
+
 
 
 def main():

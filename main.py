@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
-from gps_python3.gps import *
+from gps3 import gps3
+import time
 
 if __name__ == "__main__":
 
-    session = gps.gps("localhost", "2947")
-    session.stream(gps.WATCH_ENABLE | gps.WATCH_NEWSTYLE)
+    connection = gps3.GPSDSocket()
+    fix = gps3.Fix()
 
     try:
-        while True:
+        for data in connection:
+            if data:
+                fix.refresh(data)
+            else:
+                pass
 
-            report = session.next()
-            print(report)
+            time.sleep(1)
 
-            if report['class'] == 'DEVICE':
-                session.close()
-                session = gps(mode=WATCH_ENABLE)
-
-    except StopIteration:
-        print("GPSD has terminated")
+    except KeyboardInterrupt:
+        connection.close()
+        print("\nTerminated by user\nGood Bye.\n")

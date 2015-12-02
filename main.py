@@ -6,6 +6,7 @@ import os
 import datetime
 
 logger = logging.getLogger(__name__)
+output_dir = os.path.dirname(os.path.realpath(__file__))
 filename = datetime.datetime.now().strftime("%Y%m%d_%H%M%S") + "_gps.log"
 
 logger.setLevel(logging.DEBUG)
@@ -23,10 +24,6 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 
-
-
-
-
 def main():
     connection = gps3.GPSDSocket()
     fix = gps3.Fix()
@@ -42,7 +39,7 @@ def main():
 
     except KeyboardInterrupt:
         connection.close()
-        print("\nTerminated by user\nGood Bye.\n")
+        logger.info("\nTerminated by user\nGood Bye.\n")
 
 
 if __name__ == "__main__":

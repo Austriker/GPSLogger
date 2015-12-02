@@ -1,3 +1,3 @@
-[submodule "gps_python3"]
-	path = gps_python3
-	url = git@github.com:Austriker/gps-python3.git
+[submodule "gps3"]
+	path = gps3
+	url = git@github.com:Austriker/gps3.git

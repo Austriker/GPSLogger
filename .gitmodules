@@ -1,0 +1,3 @@
+[submodule "gps-python3"]
+	path = gps_python3
+	url = git@github.com:Austriker/gps-python3.git

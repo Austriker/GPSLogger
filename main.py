@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-import gps
+from gps_python import *
 
 if __name__ == "__main__":
 
     session = gps.gps("localhost", "2947")
     session.stream(gps.WATCH_ENABLE | gps.WATCH_NEWSTYLE)
-    
+
     try:
         while True:
 

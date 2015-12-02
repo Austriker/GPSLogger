@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from gps_python.gps import *
+from gps_python3.gps import *
 
 if __name__ == "__main__":
 

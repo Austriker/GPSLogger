@@ -3,7 +3,7 @@ Description=GPS Logger
 
 [Service]
 Type=idle
-ExecStart=python3 main.py
+ExecStart=/home/pi/GPSLogger/main.py
 WorkingDirectory=/home/pi/GPSLogger/
 Restart=always
 

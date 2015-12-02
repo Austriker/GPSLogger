@@ -12,21 +12,21 @@ sudo cp /home/pi/GPSLogger/autostart/gpslogger.service /usr/lib/systemd/system/g
 
 Then refresh the systemd :
 ```sh
-systemctl daemon-reload
+sudo systemctl daemon-reload
 ```
 
 Now you can start the service :
 ```sh
-systemctl start gpslogger
+sudo systemctl start gpslogger
 ```
 
 You can check if it's working :
 ```sh
-systemctl status gpslogger
+sudo systemctl status gpslogger
 ```
 
 Finaly you need to enable the service at startup :
 ```sh
-systemctl enable gpslogger
+sudo systemctl enable gpslogger
 ```
 

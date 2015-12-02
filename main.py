@@ -9,6 +9,11 @@ handler = logging.FileHandler('hello.log')
 handler.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
+
+consoleHandler = logging.StreamHandler()
+consoleHandler.setFormatter(logFormatter)
+
+logger.addHandler(consoleHandler)
 logger.addHandler(handler)
 
 

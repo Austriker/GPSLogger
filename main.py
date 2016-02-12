@@ -4,6 +4,7 @@ import time
 import logging
 import os
 import datetime
+import time
 
 logger = logging.getLogger(__name__)
 output_dir = os.path.dirname(os.path.realpath(__file__))
@@ -13,13 +14,13 @@ logger.setLevel(logging.DEBUG)
 
 handler = logging.StreamHandler()
 handler.setLevel(logging.DEBUG)
-formatter = logging.Formatter("%(levelname)s - %(message)s")
+formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 handler = logging.FileHandler(os.path.join(output_dir, filename), "w", encoding=None)
 handler.setLevel(logging.INFO)
-formatter = logging.Formatter("%(levelname)s - %(message)s")
+formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
@@ -34,6 +35,8 @@ def main():
                 logger.info(data)
             else:
                 pass
+
+            time.sleep(0.2)
 
     except KeyboardInterrupt:
         connection.close()
